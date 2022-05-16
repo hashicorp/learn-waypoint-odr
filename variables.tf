@@ -38,14 +38,14 @@ variable "eks_cluster_secondary_ips" {
 }
 
 variable "aws_region" {
-  default = "ca-central-1"
+  default = "us-east-2"
   type    = string
 }
 
 variable "availability_zones" {
   description = "The AZs in which the Clusters will deploy"
   default = {
-    zone_one = "ca-central-1a"
-    zone_two = "ca-central-1b"
+    zone_one = "us-east-2a"
+    zone_two = "us-east-2b"
   }
 }
