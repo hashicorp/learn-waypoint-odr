@@ -72,5 +72,7 @@ resource "aws_eks_node_group" "private" {
   disk_size = 100
 }
 
-
-
+resource "aws_eks_addon" "ebs_csi_addon" {
+  cluster_name = var.eks_cluster_name
+  addon_name   = "aws-ebs-csi-driver"
+}
