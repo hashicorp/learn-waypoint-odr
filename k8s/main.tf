@@ -72,7 +72,9 @@ resource "aws_eks_node_group" "private" {
   disk_size = 100
 }
 
+# Adds the EBS CSI driver used by Waypoint
 resource "aws_eks_addon" "ebs_csi_addon" {
   cluster_name = var.eks_cluster_name
   addon_name   = "aws-ebs-csi-driver"
+  depends_on   = [aws_eks_node_group.public, aws_eks_node_group.private]
 }
