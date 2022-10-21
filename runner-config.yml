@@ -19,6 +19,9 @@ rules:
   - apiGroups: [""]
     resources: ["namespaces"]
     verbs: ["create", "get", "watch", "list"]
+  - apiGroups: [""]
+    resources: ["deployments"]
+    verbs: ["create", "get", "watch", "list"]
 ---
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
@@ -26,7 +29,7 @@ metadata:
   name: waypoint-runner-clusterrolebinding
 subjects:
   - kind: ServiceAccount
-    name: waypoint-runner
+    name: waypoint-runner-odr
     namespace: default
 roleRef:
   kind: ClusterRole
