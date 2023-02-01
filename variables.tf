@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 variable "eks_cluster_name_primary" {
   description = "Name of the primary EKS Cluster"
   type        = string
